@@ -1,4 +1,26 @@
-name = "simple-proxy"
-main = "./.output/server/index.mjs"
-workers_dev = true
-compatibility_date = "2022-09-10"
+name = "pstream-proxy"
+main = ".output/server/index.mjs"
+compatibility_date = "2024-01-15"
+compatibility_flags = ["nodejs_compat"]
+
+# Optional: Add your account ID if you have one
+# account_id = "your-cloudflare-account-id"
+
+[env.production]
+name = "pstream-proxy-production"
+
+[env.staging]
+name = "pstream-proxy-staging"
+
+# Environment variables for Turnstile (optional security)
+[vars]
+# TURNSTILE_SECRET = "your-turnstile-secret-key"
+# JWT_SECRET = "your-32-character-jwt-secret"
+
+# Build configuration
+[build]
+command = "npm run build"
+
+# Triggers for scheduled tasks (if needed)
+# [triggers]
+# crons = ["0 */6 * * *"]
