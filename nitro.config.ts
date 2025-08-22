@@ -1,14 +1,14 @@
-import { join } from "path";
-import pkg from "./package.json";
-
-//https://nitro.unjs.io/config
 export default defineNitroConfig({
-  compatibilityDate: "2025-04-20",
-  srcDir: "./src",
-  runtimeConfig: {
-    version: pkg.version
+  preset: 'cloudflare-workers',
+  serveStatic: false,
+  noPublicDir: true,
+  rollupConfig: {
+    external: []
   },
-  alias: {
-    "@": join(__dirname, "src")
-  }
+  experimental: {
+    wasm: false
+  },
+  minify: true,
+  sourceMap: false,
+  timing: false
 });
