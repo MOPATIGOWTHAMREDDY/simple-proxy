@@ -1,4 +1,4 @@
-name = "pstream-proxy"
+name = "dashboard"
 main = ".output/server/index.mjs"
 compatibility_date = "2024-01-15"
 compatibility_flags = ["nodejs_compat"]
